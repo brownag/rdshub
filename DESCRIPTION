@@ -13,7 +13,9 @@ Authors@R: c(
 Description: Experimental functions for interacting with public-facing 'Dynamic 
     Soils Hub' tools and APIs.
 Depends: R (>= 4.1.0)
-Imports: terra
+Imports: 
+    methods,
+    terra
 Suggests: tinytest
 License: CC0
 Encoding: UTF-8

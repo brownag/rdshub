@@ -31,6 +31,7 @@
 #'
 #' @return A _SpatRaster_ object.
 #' @export
+#' @importFrom methods as
 #' @importFrom terra ext rast sprc vrt metags metags<- depth depthUnit crop project relate
 #' @examplesIf requireNamespace("terra") && as.logical(Sys.getenv("R_RDSHUB_RUN_LONG_EXAMPLES", unset = "FALSE"))
 #' library(rdshub)

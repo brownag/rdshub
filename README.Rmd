@@ -1,0 +1,67 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# rdshub
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of {rdshub} is to provide a experimental functions for interacting with public-facing 'Dynamic Soils Hub' tools and APIs. Contents of this package may change at any time based on server-side changes and new approaches. Well-polished functions may be moved to other packages eventually.
+
+Currently the following functions are available:
+
+ - `dsh_soil_properties()`
+
+
+## Installation
+
+You can install the development version of rdshub from [GitHub](https://github.com/brownag/rdshub) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("brownag/rdshub")
+```
+
+## Example
+
+This is a basic example demonstrating how to obtain variables with top depth `0` cm, and bottom depth `0` cm and `200` cm. 
+
+The result includes all "site" level variables that have a `"domcond"` (dominant condition) aggregation, as well as all `"wtdavg"` (depth weighted average) variables for interval `[0,200]`
+
+```{r example}
+library(rdshub)
+library(terra)
+
+x <- dsh_soil_properties(
+  # variables = c("claytotal", "sandtotal", "silttotal", "drainagecl"),
+  top_depth = 0,
+  bottom_depth = c(0, 200),
+  aggregations = c("wtdavg", "domcond"),
+  resolutions = 900
+)
+
+terra::sources(x)
+
+terra::metags(x, layer = 1)
+
+vars <- x |>
+  terra::metags(seq_len(terra::nlyr(x))) |>
+  subset(name == "variable")
+names(x) <- vars$value
+
+terra::plot(x)
+
+x$sandtotal + x$claytotal + x$silttotal
+```
