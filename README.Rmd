@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 # rdshub
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/brownag/rdshub/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/brownag/rdshub/actions/workflows/R-CMD-check.yaml)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 The goal of {rdshub} is to provide a experimental functions for interacting with public-facing 'Dynamic Soils Hub' tools and APIs. Contents of this package may change at any time based on server-side changes and new approaches. Well-polished functions may be moved to other packages eventually.
