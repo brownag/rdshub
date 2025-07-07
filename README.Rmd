@@ -20,12 +20,15 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of {rdshub} is to provide a experimental functions for interacting with public-facing 'Dynamic Soils Hub' tools and APIs. Contents of this package may change at any time based on server-side changes and new approaches. Well-polished functions may be moved to other packages eventually.
+The goal of {rdshub} is to provide experimental functions for interacting with public-facing 'Dynamic Soils Hub' tools and APIs. 
 
 Currently the following functions are available:
 
  - `dsh_soil_properties()`
 
+> [!NOTE]
+>
+> Contents of this package may change at any time based on server-side changes and new approaches. Well-polished functions may be moved to other packages eventually.
 
 ## Installation
 
