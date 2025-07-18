@@ -25,26 +25,27 @@ object). Default: \code{NULL} returns a virtual raster. If \code{x} is a \emph{S
 the coordinate reference system, extent, and resolution are used as a
 template for the output raster.}
 
-\item{variables}{\emph{character}. One or more variables corresponding to grid file names
-(without .tif extension). See
+\item{variables}{\emph{character}. One or more variables corresponding to grid
+file names (without .tif extension). See
 \url{https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt}
 for details.}
 
-\item{resolutions}{integer. One or more of: \code{30}, \code{900}. Use \code{NULL} for no filter on
-resolution.}
+\item{resolutions}{integer. One or more of: \code{30}, \code{900}. Use \code{NULL} for no
+filter on resolution.}
 
-\item{aggregations}{\emph{character}. One or more of: \code{"domcond"}, \code{"wtdavg"}, \code{"minmax"}. Use
-\code{NULL} for no filter on aggregation method.}
+\item{aggregations}{\emph{character}. One or more of: \code{"domcond"}, \code{"wtdavg"},
+\code{"minmax"}. Use \code{NULL} for no filter on aggregation method.}
 
-\item{top_depth}{integer. Top depth. Default: \code{0} (includes all grids that have no depth)}
+\item{top_depth}{integer. Top depth. Default: \code{0} (includes all grids that
+have no depth)}
 
 \item{bottom_depth}{integer. Bottom depth. Default: \code{200}}
 
-\item{region}{\emph{character}. One or more of: \code{"conus"}, \code{"oconus"}. Use \code{NULL} for no
-filter on location.}
+\item{region}{\emph{character}. One or more of: \code{"conus"}, \code{"oconus"}. Use \code{NULL}
+for no filter on location.}
 
-\item{subregion}{\emph{character}. One or more of: \code{"conus"}, \code{"pr"}, \code{"ak"}, \code{"as"}, \code{"fm"},
-\code{"gu"}, \code{"hi"}, \code{"mh"}, \code{"mp"}, \code{"pw"}}
+\item{subregion}{\emph{character}. One or more of: \code{"conus"}, \code{"pr"}, \code{"ak"},
+\code{"as"}, \code{"fm"}, \code{"gu"}, \code{"hi"}, \code{"mh"}, \code{"mp"}, \code{"pw"}}
 
 \item{filename}{character. Path to write output raster file. Default: \code{NULL}
 will keep result in memory (or store in temporary file if memory threshold
@@ -52,7 +53,8 @@ is exceeded)}
 
 \item{overwrite}{logical. Overwrite \code{filename} if it exists? Default: \code{FALSE}}
 
-\item{vrt}{logical. Use \code{terra::vrt()} for result SpatRaster? Default: \code{FALSE}}
+\item{vrt}{logical. Use \code{terra::vrt()} for result SpatRaster? Default:
+\code{FALSE}}
 
 \item{...}{Additional arguments passed to \code{writeRaster()} via \code{terra::crop()}
 or \code{terra::project()}. Ignored when \code{x} is \code{NULL}.}

@@ -1,38 +1,42 @@
 #' 'Dynamic Soils Hub' Soil Property Grids
 #'
 #' Create a 'terra' _SpatRaster_ object referencing soil property grids from the
-#' ['Dynamic Soils Hub' Public S3 bucket](https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt)
+#' ['Dynamic Soils Hub' Public S3
+#' bucket](https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt)
 #'
 #' @param x An R spatial object (such as a _SpatVector_, _SpatRaster_, or _sf_
 #'   object). Default: `NULL` returns a virtual raster. If `x` is a _SpatRaster_
 #'   the coordinate reference system, extent, and resolution are used as a
 #'   template for the output raster.
-#' @param variables _character_. One or more variables corresponding to grid file names
-#' (without .tif extension). See
-#' \url{https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt}
-#' for details.
-#' @param resolutions integer. One or more of: `30`, `900`. Use `NULL` for no filter on
-#'   resolution.
-#' @param aggregations _character_. One or more of: `"domcond"`, `"wtdavg"`, `"minmax"`. Use
-#'   `NULL` for no filter on aggregation method.
-#' @param region _character_. One or more of: `"conus"`, `"oconus"`. Use `NULL` for no
-#'   filter on location.
-#' @param subregion _character_. One or more of: `"conus"`, `"pr"`, `"ak"`, `"as"`, `"fm"`,
-#'  `"gu"`, `"hi"`, `"mh"`, `"mp"`, `"pw"`
+#' @param variables _character_. One or more variables corresponding to grid
+#'   file names (without .tif extension). See
+#'   \url{https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt}
+#'   for details.
+#' @param resolutions integer. One or more of: `30`, `900`. Use `NULL` for no
+#'   filter on resolution.
+#' @param aggregations _character_. One or more of: `"domcond"`, `"wtdavg"`,
+#'   `"minmax"`. Use `NULL` for no filter on aggregation method.
+#' @param region _character_. One or more of: `"conus"`, `"oconus"`. Use `NULL`
+#'   for no filter on location.
+#' @param subregion _character_. One or more of: `"conus"`, `"pr"`, `"ak"`,
+#'   `"as"`, `"fm"`, `"gu"`, `"hi"`, `"mh"`, `"mp"`, `"pw"`
 #' @param filename character. Path to write output raster file. Default: `NULL`
 #'   will keep result in memory (or store in temporary file if memory threshold
 #'   is exceeded)
 #' @param overwrite logical. Overwrite `filename` if it exists? Default: `FALSE`
 #' @param ... Additional arguments passed to `writeRaster()` via `terra::crop()`
 #'   or `terra::project()`. Ignored when `x` is `NULL`.
-#' @param top_depth integer. Top depth. Default: `0` (includes all grids that have no depth)
+#' @param top_depth integer. Top depth. Default: `0` (includes all grids that
+#'   have no depth)
 #' @param bottom_depth integer. Bottom depth. Default: `200`
-#' @param vrt logical. Use `terra::vrt()` for result SpatRaster? Default: `FALSE`
+#' @param vrt logical. Use `terra::vrt()` for result SpatRaster? Default:
+#'   `FALSE`
 #'
 #' @return A _SpatRaster_ object.
 #' @export
 #' @importFrom methods as
-#' @importFrom terra ext rast sprc vrt metags metags<- depth depthUnit crop project relate
+#' @importFrom terra ext rast sprc vrt metags metags<- depth depthUnit crop
+#'   project relate
 #' @examplesIf requireNamespace("terra") && as.logical(Sys.getenv("R_RDSHUB_RUN_LONG_EXAMPLES", unset = "FALSE"))
 #' library(rdshub)
 #' library(terra)
