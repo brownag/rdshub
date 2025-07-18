@@ -1,7 +1,7 @@
 Package: rdshub
 Type: Package
 Title: Functions for the 'Dynamic Soils Hub'
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(
       "Andrew", "Brown",

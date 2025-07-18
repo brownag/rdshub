@@ -15,9 +15,9 @@
 #'   resolution.
 #' @param aggregations _character_. One or more of: `"domcond"`, `"wtdavg"`, `"minmax"`. Use
 #'   `NULL` for no filter on aggregation method.
-#' @param locations _character_. One or more of: `"conus"`, `"oconus"`. Use `NULL` for no
+#' @param region _character_. One or more of: `"conus"`, `"oconus"`. Use `NULL` for no
 #'   filter on location.
-#' @param territories _character_. One or more of: `"conus"`, `"pr"`, `"ak"`, `"as"`, `"fm"`,
+#' @param subregion _character_. One or more of: `"conus"`, `"pr"`, `"ak"`, `"as"`, `"fm"`,
 #'  `"gu"`, `"hi"`, `"mh"`, `"mp"`, `"pw"`
 #' @param filename character. Path to write output raster file. Default: `NULL`
 #'   will keep result in memory (or store in temporary file if memory threshold
@@ -71,8 +71,8 @@ dsh_soil_properties <-
            aggregations = NULL,
            top_depth = 0,
            bottom_depth = 200,
-           locations = "conus",
-           territories = "conus",
+           region = "conus",
+           subregion = "conus",
            filename = NULL,
            overwrite = FALSE,
            vrt = FALSE,
@@ -89,8 +89,8 @@ dsh_soil_properties <-
 
   # grid, method, and variable subsetting
   ind <- ind |>
-    .subset_index(locations, "location") |>
-    .subset_index(territories, "territory") |>
+    .subset_index(region, "region") |>
+    .subset_index(subregion, "subregion") |>
     .subset_index(aggregations, "aggregation") |>
     .subset_index(resolutions, "resolution") |>
     .subset_index(variables, "variable")
@@ -126,8 +126,8 @@ dsh_soil_properties <-
     terra::metags(r, layer = n, domain = "depth") <- paste0("depth:top=", ind$top)
     terra::metags(r, layer = n) <- "endpoint=SoilProperties"
     terra::metags(r, layer = n) <- paste0("variable=", ind$variable)
-    terra::metags(r, layer = n) <- paste0("location=", ind$location)
-    terra::metags(r, layer = n) <- paste0("territory=", ind$territory)
+    terra::metags(r, layer = n) <- paste0("region=", ind$region)
+    terra::metags(r, layer = n) <- paste0("subregion=", ind$subregion)
     terra::metags(r, layer = n) <- paste0("aggregation=", ind$aggregation)
     terra::metags(r, layer = n) <- paste0("version=", ind$version)
   }
@@ -160,9 +160,9 @@ dsh_soil_properties <-
   ), "_")))
 
   colnames(dat) <- c(
-    "location",
+    "region",
     "srs_id",
-    "territory",
+    "subregion",
     "resolution",
     "version",
     "top",
