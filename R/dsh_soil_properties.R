@@ -78,6 +78,9 @@ dsh_soil_properties <-
            vrt = FALSE,
            ...) {
 
+  args <- list(...)
+  vrt_separate <- args[["vrt_separate"]]
+
   ind <- .get_DSHUB_soil_properties_ssurgo_index()
 
   .subset_index <- function(x, y, n) {
@@ -103,8 +106,7 @@ dsh_soil_properties <-
   funargs <- list()
   if (isTRUE(vrt)) {
     FUN <- terra::vrt
-    if (!missing(vrt_separate) &&
-        isTRUE(vrt_separate)) {
+    if (isTRUE(vrt_separate)) {
       funargs <- list(options = "-separate")
     }
   } else {
