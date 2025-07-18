@@ -8,6 +8,13 @@
 \description{
 Experimental functions for interacting with public-facing 'Dynamic Soils Hub' tools and APIs.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{http://humus.rocks/rdshub/}
+}
+
+}
 \author{
 \strong{Maintainer}: Andrew Brown \email{andrew.g.brown@usda.gov} (\href{https://orcid.org/0000-0002-4565-533X}{ORCID})
 

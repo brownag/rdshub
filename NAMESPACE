@@ -2,6 +2,7 @@
 
 export(dsh_s3_base_url)
 export(dsh_soil_properties)
+importFrom(methods,as)
 importFrom(terra,"metags<-")
 importFrom(terra,crop)
 importFrom(terra,depth)

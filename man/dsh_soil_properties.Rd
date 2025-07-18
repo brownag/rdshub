@@ -11,8 +11,8 @@ dsh_soil_properties(
   aggregations = NULL,
   top_depth = 0,
   bottom_depth = 200,
-  locations = "conus",
-  territories = "conus",
+  region = "conus",
+  subregion = "conus",
   filename = NULL,
   overwrite = FALSE,
   vrt = FALSE,
@@ -40,10 +40,10 @@ resolution.}
 
 \item{bottom_depth}{integer. Bottom depth. Default: \code{200}}
 
-\item{locations}{\emph{character}. One or more of: \code{"conus"}, \code{"oconus"}. Use \code{NULL} for no
+\item{region}{\emph{character}. One or more of: \code{"conus"}, \code{"oconus"}. Use \code{NULL} for no
 filter on location.}
 
-\item{territories}{\emph{character}. One or more of: \code{"conus"}, \code{"pr"}, \code{"ak"}, \code{"as"}, \code{"fm"},
+\item{subregion}{\emph{character}. One or more of: \code{"conus"}, \code{"pr"}, \code{"ak"}, \code{"as"}, \code{"fm"},
 \code{"gu"}, \code{"hi"}, \code{"mh"}, \code{"mp"}, \code{"pw"}}
 
 \item{filename}{character. Path to write output raster file. Default: \code{NULL}
