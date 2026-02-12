@@ -9,7 +9,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rdshub</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
 
     <div class="ref-description section level2">
     <p>Create a 'terra' <em>SpatRaster</em> object referencing soil property grids from the
-<a href="https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt" class="external-link">'Dynamic Soils Hub' Public S3 bucket</a></p>
+<a href="https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt" class="external-link">'Dynamic Soils Hub' Public S3 bucket</a></p>
     </div>
 
     <div class="section level2">
@@ -69,24 +69,25 @@ template for the output raster.</p></dd>
 
 
 <dt id="arg-variables">variables<a class="anchor" aria-label="anchor" href="#arg-variables"></a></dt>
-<dd><p><em>character</em>. One or more variables corresponding to grid file names
-(without .tif extension). See
-<a href="https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt" class="external-link">https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt</a>
+<dd><p><em>character</em>. One or more variables corresponding to grid
+file names (without .tif extension). See
+<a href="https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt" class="external-link">https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt</a>
 for details.</p></dd>
 
 
 <dt id="arg-resolutions">resolutions<a class="anchor" aria-label="anchor" href="#arg-resolutions"></a></dt>
-<dd><p>integer. One or more of: <code>30</code>, <code>900</code>. Use <code>NULL</code> for no filter on
-resolution.</p></dd>
+<dd><p>integer. One or more of: <code>30</code>, <code>900</code>. Use <code>NULL</code> for no
+filter on resolution.</p></dd>
 
 
 <dt id="arg-aggregations">aggregations<a class="anchor" aria-label="anchor" href="#arg-aggregations"></a></dt>
-<dd><p><em>character</em>. One or more of: <code>"domcond"</code>, <code>"wtdavg"</code>, <code>"minmax"</code>. Use
-<code>NULL</code> for no filter on aggregation method.</p></dd>
+<dd><p><em>character</em>. One or more of: <code>"domcond"</code>, <code>"wtdavg"</code>,
+<code>"minmax"</code>. Use <code>NULL</code> for no filter on aggregation method.</p></dd>
 
 
 <dt id="arg-top-depth">top_depth<a class="anchor" aria-label="anchor" href="#arg-top-depth"></a></dt>
-<dd><p>integer. Top depth. Default: <code>0</code> (includes all grids that have no depth)</p></dd>
+<dd><p>integer. Top depth. Default: <code>0</code> (includes all grids that
+have no depth)</p></dd>
 
 
 <dt id="arg-bottom-depth">bottom_depth<a class="anchor" aria-label="anchor" href="#arg-bottom-depth"></a></dt>
@@ -94,13 +95,13 @@ resolution.</p></dd>
 
 
 <dt id="arg-region">region<a class="anchor" aria-label="anchor" href="#arg-region"></a></dt>
-<dd><p><em>character</em>. One or more of: <code>"conus"</code>, <code>"oconus"</code>. Use <code>NULL</code> for no
-filter on location.</p></dd>
+<dd><p><em>character</em>. One or more of: <code>"conus"</code>, <code>"oconus"</code>. Use <code>NULL</code>
+for no filter on location.</p></dd>
 
 
 <dt id="arg-subregion">subregion<a class="anchor" aria-label="anchor" href="#arg-subregion"></a></dt>
-<dd><p><em>character</em>. One or more of: <code>"conus"</code>, <code>"pr"</code>, <code>"ak"</code>, <code>"as"</code>, <code>"fm"</code>,
-<code>"gu"</code>, <code>"hi"</code>, <code>"mh"</code>, <code>"mp"</code>, <code>"pw"</code></p></dd>
+<dd><p><em>character</em>. One or more of: <code>"conus"</code>, <code>"pr"</code>, <code>"ak"</code>,
+<code>"as"</code>, <code>"fm"</code>, <code>"gu"</code>, <code>"hi"</code>, <code>"mh"</code>, <code>"mp"</code>, <code>"pw"</code></p></dd>
 
 
 <dt id="arg-filename">filename<a class="anchor" aria-label="anchor" href="#arg-filename"></a></dt>
@@ -114,7 +115,8 @@ is exceeded)</p></dd>
 
 
 <dt id="arg-vrt">vrt<a class="anchor" aria-label="anchor" href="#arg-vrt"></a></dt>
-<dd><p>logical. Use <code><a href="https://rspatial.github.io/terra/reference/vrt.html" class="external-link">terra::vrt()</a></code> for result SpatRaster? Default: <code>FALSE</code></p></dd>
+<dd><p>logical. Use <code><a href="https://rspatial.github.io/terra/reference/vrt.html" class="external-link">terra::vrt()</a></code> for result SpatRaster? Default:
+<code>FALSE</code></p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
@@ -171,7 +173,7 @@ or <code><a href="https://rspatial.github.io/terra/reference/project.html" class
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>
