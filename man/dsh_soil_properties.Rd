@@ -27,7 +27,7 @@ template for the output raster.}
 
 \item{variables}{\emph{character}. One or more variables corresponding to grid
 file names (without .tif extension). See
-\url{https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt}
+\url{https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt}
 for details.}
 
 \item{resolutions}{integer. One or more of: \code{30}, \code{900}. Use \code{NULL} for no
@@ -64,10 +64,10 @@ A \emph{SpatRaster} object.
 }
 \description{
 Create a 'terra' \emph{SpatRaster} object referencing soil property grids from the
-\href{https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt}{'Dynamic Soils Hub' Public S3 bucket}
+\href{https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt}{'Dynamic Soils Hub' Public S3 bucket}
 }
 \examples{
-\dontshow{if (requireNamespace("terra") && as.logical(Sys.getenv("R_RDSHUB_RUN_LONG_EXAMPLES", unset = "FALSE"))) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (requireNamespace("terra") && as.logical(Sys.getenv("R_RDSHUB_RUN_LONG_EXAMPLES", unset = "FALSE"))) withAutoprint(\{ # examplesIf}
 library(rdshub)
 library(terra)
 

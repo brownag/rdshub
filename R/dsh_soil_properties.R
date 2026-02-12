@@ -2,7 +2,7 @@
 #'
 #' Create a 'terra' _SpatRaster_ object referencing soil property grids from the
 #' ['Dynamic Soils Hub' Public S3
-#' bucket](https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt)
+#' bucket](https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt)
 #'
 #' @param x An R spatial object (such as a _SpatVector_, _SpatRaster_, or _sf_
 #'   object). Default: `NULL` returns a virtual raster. If `x` is a _SpatRaster_
@@ -10,7 +10,7 @@
 #'   template for the output raster.
 #' @param variables _character_. One or more variables corresponding to grid
 #'   file names (without .tif extension). See
-#'   \url{https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com/SoilProperties/_README.txt}
+#'   \url{https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com/SoilProperties/_README.txt}
 #'   for details.
 #' @param resolutions integer. One or more of: `30`, `900`. Use `NULL` for no
 #'   filter on resolution.
@@ -159,7 +159,8 @@ dsh_soil_properties <-
   }
 
   urls <- res[grepl("\\.tif$", res)]
-  df <- data.frame(url = urls, filename = basename(urls))
+  df <- data.frame(url = paste0(base_url, "/", endpoint, "/", basename(urls)),
+                   filename = basename(urls))
 
   dat <- as.data.frame(do.call("rbind", strsplit(gsub(
     "\\.tif$", "", df$filename
@@ -193,7 +194,6 @@ dsh_soil_properties <-
 #'   _Raster*_ object.
 #' @param filename Optional: File name to write intermediate file. If `NULL`
 #'   (default) a temporary file is used if result does not fit in memory.
-#' @seealso [fetchSOLUS()], [fetchSTEDUS()]
 #' @return A _SpatRaster_ Object
 #' @noRd
 .dsh_raster_extent <- function(r, x, filename = NULL, overwrite = FALSE, ...) {

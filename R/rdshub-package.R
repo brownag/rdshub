@@ -21,6 +21,6 @@ NULL
 dsh_s3_base_url <- function() {
   o <- getOption("rdshub.s3_base_url", default = NULL)
   if (is.null(o) || length(o) == 0)
-    return("https://s3-fpac-nrcs-dshub-public.s3.us-gov-west-1.amazonaws.com")
+    return("https://s3-fpac-nrcs-dshub-public.s3.us-east-1.amazonaws.com")
   o
 }
